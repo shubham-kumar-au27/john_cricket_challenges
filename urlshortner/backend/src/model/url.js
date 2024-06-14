@@ -1,8 +1,13 @@
-const mongoose = require('mongoose');
+
+import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema;
 
 const generateUrlSchema = new Schema({
+    userId:{
+        type:String,
+        // required:true
+    },
     urlId: {
         type: String,
         required: true,
@@ -19,6 +24,5 @@ const generateUrlSchema = new Schema({
 
 const Url = mongoose.model('Url', generateUrlSchema);
 
-module.exports = {
-    Url
-};
+
+export default Url
